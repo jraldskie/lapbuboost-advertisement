@@ -1,0 +1,160 @@
+.about-us-container {
+  color: white;
+  overflow-x: hidden;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Store Image */
+.store-image {
+  box-shadow: 0 10px 25px rgba(0, 0, 255, 0.2);
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.store-image:hover {
+  transform: scale(1.02);
+}
+
+/* Text styling */
+.text-description {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.logo-section h1 {
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 15px rgba(0, 100, 255, 0.5);
+}
+
+.logo-section h2 {
+  letter-spacing: 0.03em;
+}
+
+/* Social Media Icons */
+.social-item {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.social-icon {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-item:hover {
+  transform: translateY(-2px);
+}
+
+.social-item:hover .social-icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.social-media-section {
+  border-radius: 8px;
+}
+
+/* Branch Cards */
+.branch-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.mobile-menu.open {
+  max-height: 300px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.burger-button {
+  transition: transform 0.3s ease;
+}
+
+.burger-button:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation links styling */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover:after, .nav-link.active:after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #3b82f6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content-section,
+  .social-media-section,
+  .branches-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .branch-card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Animation for elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-content-section,
+.social-media-section,
+.branches-section {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.branch-card:nth-child(1) { animation-delay: 0.1s; }
+.branch-card:nth-child(2) { animation-delay: 0.3s; }
+.branch-card:nth-child(3) { animation-delay: 0.5s; }
