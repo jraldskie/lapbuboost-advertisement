@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AboutUs.css';
 import lapbuboostLogo from '../images/lapbuboost logo.png';
 import aboutStoreImage from '../images/aboutstoree.png';
-import backgroundImage from '../images/rogbannercover.png';
+import backgroundImage from '../images/background.png';
 import FacebookIcon from './icons/FacebookIcon';
 import InstagramIcon from './icons/InstagramIcon';
 import TiktokIcon from './icons/TiktokIcon';
@@ -31,9 +31,9 @@ function AboutUs() {
         </div>
         <nav className="flex">
           <a href="/" className="text-white mx-6 hover:text-blue-400 nav-link">Home</a>
-          <a href="#" className="text-white mx-6 hover:text-blue-400 nav-link">Gallery</a>
-          <a href="#" className="text-white mx-6 hover:text-blue-400 nav-link">Featured</a>
-          <a href="#" className="text-white mx-6 hover:text-blue-400 nav-link">Products</a>
+          <a href="/gallery" className="text-white mx-6 hover:text-blue-400 nav-link">Gallery</a>
+          <a href="/featured" className="text-white mx-6 hover:text-blue-400 nav-link">Featured</a>
+          <a href="/products" className="text-white mx-6 hover:text-blue-400 nav-link">Products</a>
           <a href="/about" className="text-white mx-6 hover:text-blue-400 nav-link active">About Us</a>
         </nav>
       </header>
@@ -61,9 +61,9 @@ function AboutUs() {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''} bg-black bg-opacity-90 backdrop-blur-sm absolute w-full z-30 transition-all duration-300`}>
           <nav className="flex flex-col items-center py-5">
             <a href="/" className="text-white py-3 hover:text-blue-400 nav-link">Home</a>
-            <a href="#" className="text-white py-3 hover:text-blue-400 nav-link">Gallery</a>
-            <a href="#" className="text-white py-3 hover:text-blue-400 nav-link">Featured</a>
-            <a href="#" className="text-white py-3 hover:text-blue-400 nav-link">Products</a>
+            <a href="/gallery" className="text-white py-3 hover:text-blue-400 nav-link">Gallery</a>
+            <a href="/featured" className="text-white py-3 hover:text-blue-400 nav-link">Featured</a>
+            <a href="/products" className="text-white py-3 hover:text-blue-400 nav-link">Products</a>
             <a href="/about" className="text-white py-3 hover:text-blue-400 nav-link active">About Us</a>
           </nav>
         </div>
