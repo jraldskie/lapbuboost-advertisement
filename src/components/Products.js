@@ -343,10 +343,10 @@ function Products() {
            backgroundAttachment: 'fixed'
          }}>
       {/* Dark overlay for better readability */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 z-0"></div>
+      <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 pointer-events-none" style={{zIndex: 5}}></div>
       
       {/* Desktop Navigation */}
-      <header className="hidden md:flex justify-between items-center px-8 py-5 z-20 relative">
+      <header className="hidden md:flex justify-between items-center px-8 py-5 relative" style={{zIndex: 10}}>
         <div className="flex items-center">
           <a href="/">
             <img src={lapbuboostLogo} alt="Lapbuboost Logo" className="h-12 mr-2" />
@@ -363,7 +363,7 @@ function Products() {
       </header>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden z-20 relative">
+      <div className="md:hidden relative" style={{zIndex: 10}}>
         <header className="flex justify-between items-center p-4">
           <div className="flex items-center">
             <a href="/">
@@ -427,7 +427,7 @@ function Products() {
       </div>
 
       {/* Main Content */}
-      <div className="main-content relative z-10 px-4 md:px-8 pt-6 pb-12">
+      <div className="main-content relative px-4 md:px-8 pt-6 pb-12" style={{zIndex: 10}}>
         <div className="container mx-auto">
           {/* Search and Filter Controls */}
           <div className="search-filter-container mb-8">
@@ -560,7 +560,7 @@ function Products() {
       </div>
       
       {/* Footer */}
-      <footer className="py-6 text-center text-gray-400 text-sm z-10 relative">
+      <footer className="py-6 text-center text-gray-400 text-sm relative" style={{zIndex: 10}}>
         <p>© 2025 Lapbuboost. All Rights Reserved.</p>
       </footer>
 
