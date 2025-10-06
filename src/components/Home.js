@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import lapbuboostLogo from '../images/lapbuboost logo.png';
+import lapbuboostLogo from '../images/LOGO.png';
 import rogStrixG16 from '../images/rogstrixg16.png';
 import backgroundImage from '../images/background.png';
 import rogFold from '../images/rogfold.png';

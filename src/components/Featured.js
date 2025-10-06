@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Featured.css';
-import lapbuboostLogo from '../images/lapbuboost logo.png';
+import lapbuboostLogo from '../images/LOGO.png';
 import backgroundImage from '../images/background.png';
 
 // Import images

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Gallery.css';
-import lapbuboostLogo from '../images/lapbuboost logo.png';
+import lapbuboostLogo from '../images/LOGO.png';
 import backgroundImage from '../images/background.png';
 
 function Gallery() {
