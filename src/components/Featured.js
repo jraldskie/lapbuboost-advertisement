@@ -112,63 +112,6 @@ function Featured() {
 
       <div className="featured-scroll-container w-full overflow-y-auto relative z-10">
 
-        {/* ROG Nebula Display Section */}
-        <section className="min-h-screen flex items-center border-b border-gray-800">
-          <div className="container mx-auto px-4 md:px-8 py-16 flex flex-col md:flex-row items-center gap-8">
-            {/* Left side - Laptop Image */}
-            <div className="w-full md:w-1/2 mb-8 md:mb-0">
-              <img
-                src={displayParallax}
-                alt="ROG Nebula Display"
-                className="w-full max-w-3xl mx-auto shadow-2xl"
-              />
-            </div>
-
-            {/* Right side - Content */}
-            <div className="w-full md:w-1/2 md:pl-12">
-              <img
-                src={nebulaImage}
-                alt="ROG Nebula Display Logo"
-                className="h-14 md:h-20 mb-6"
-              />
-              
-              <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-                The Strix G18 has fast panel options to ensure you won't miss anything. It offers an 18-inch machine with a 2.5K 240Hz Nebula display, providing precise visuals even in intense gaming situations. Additionally, it is available with a Full HD 165Hz panel, both with great color, Dolby Vision, Adaptive-Sync support, and an 89% screen-to-body ratio for an excellent gaming and viewing experience.
-              </p>
-
-              <div className="mb-8 flex justify-center">
-                <img
-                  src={nvidiaGSync}
-                  alt="NVIDIA G-SYNC"
-                  className="h-10 md:h-12"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-6 mb-4 max-w-md mx-auto">
-                <div className="text-center">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">89%</h3>
-                  <p className="text-gray-400 text-sm">Screen Ratio</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">240Hz / 3ms</h3>
-                  <p className="text-gray-400 text-sm">Refresh Rate</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6 max-w-md mx-auto">
-                <div className="text-center">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">500 Nits</h3>
-                  <p className="text-gray-400 text-sm">Screen Brightness</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">100% DCI-P3</h3>
-                  <p className="text-gray-400 text-sm">Technology</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Xbox Game Pass Section */}
         <section className="h-screen flex items-center border-b border-gray-800">
           <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
@@ -266,6 +209,63 @@ function Featured() {
 
               <div>
                 <h3 className="text-xl font-medium text-green-400">NVIDIA® Advance Optimus</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+                {/* ROG Nebula Display Section */}
+        <section className="min-h-screen flex items-center border-b border-gray-800">
+          <div className="container mx-auto px-4 md:px-8 py-16 flex flex-col md:flex-row items-center gap-8">
+            {/* Left side - Laptop Image */}
+            <div className="w-full md:w-1/2 mb-8 md:mb-0">
+              <img
+                src={displayParallax}
+                alt="ROG Nebula Display"
+                className="w-full max-w-3xl mx-auto shadow-2xl"
+              />
+            </div>
+
+            {/* Right side - Content */}
+            <div className="w-full md:w-1/2 md:pl-12">
+              <img
+                src={nebulaImage}
+                alt="ROG Nebula Display Logo"
+                className="h-14 md:h-20 mb-6"
+              />
+              
+              <p className="text-gray-300 mb-8 text-lg leading-relaxed">
+                The Strix G18 has fast panel options to ensure you won't miss anything. It offers an 18-inch machine with a 2.5K 240Hz Nebula display, providing precise visuals even in intense gaming situations. Additionally, it is available with a Full HD 165Hz panel, both with great color, Dolby Vision, Adaptive-Sync support, and an 89% screen-to-body ratio for an excellent gaming and viewing experience.
+              </p>
+
+              <div className="mb-8 flex justify-center">
+                <img
+                  src={nvidiaGSync}
+                  alt="NVIDIA G-SYNC"
+                  className="h-10 md:h-12"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-6 mb-4 max-w-md mx-auto">
+                <div className="text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">89%</h3>
+                  <p className="text-gray-400 text-sm">Screen Ratio</p>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">240Hz / 3ms</h3>
+                  <p className="text-gray-400 text-sm">Refresh Rate</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-6 max-w-md mx-auto">
+                <div className="text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">500 Nits</h3>
+                  <p className="text-gray-400 text-sm">Screen Brightness</p>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">100% DCI-P3</h3>
+                  <p className="text-gray-400 text-sm">Technology</p>
+                </div>
               </div>
             </div>
           </div>
