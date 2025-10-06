@@ -363,8 +363,8 @@ function Products() {
       </header>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden relative" style={{zIndex: 10}}>
-        <header className="flex justify-between items-center p-4">
+      <div className="md:hidden fixed top-0 left-0 right-0" style={{zIndex: 50}}>
+        <header className="flex justify-between items-center p-4 bg-black bg-opacity-90">
           <a href="/" className="flex items-center">
             <img src={lapbuboostLogo} alt="Lapbuboost Logo" className="h-8 mr-2" />
             <h1 className="text-white text-lg font-bold">LAPBUBOOST</h1>
@@ -379,36 +379,36 @@ function Products() {
         </header>
 
         {/* Mobile menu */}
-        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''} bg-black bg-opacity-90 backdrop-blur-sm fixed top-16 left-0 right-0 z-30 transition-all duration-300`}>
+        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''} bg-black bg-opacity-95 backdrop-blur-sm fixed top-16 left-0 right-0 z-50 transition-all duration-300`}>
           <nav className="flex flex-col items-center py-5">
-            <a href="/" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link">Home</a>
-            <a href="/gallery" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link">Gallery</a>
-            <a href="/featured" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link">Featured</a>
-            <a href="/products" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link active">Products</a>
-            <a href="/about" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link">About Us</a>
+            <a href="/" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link block">Home</a>
+            <a href="/gallery" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link block">Gallery</a>
+            <a href="/featured" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link block">Featured</a>
+            <a href="/products" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link active block">Products</a>
+            <a href="/about" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link block">About Us</a>
             
             {/* Brand filters in mobile menu */}
             <div className="mobile-brand-filters mt-4 border-t border-gray-700 pt-4 w-full px-4">
               <h3 className="text-center text-gray-400 mb-3 text-sm">Filter by Brand</h3>
               <div className="grid grid-cols-3 gap-2">
-                <div 
+                <button 
                   onClick={() => {
                     handleBrandClick('all');
                     toggleMobileMenu();
                   }}
-                  className={`mobile-filter-item text-center py-2 px-1 ${selectedBrand === 'all' ? 'active' : ''}`}
+                  className={`mobile-filter-item text-center py-2 px-1 z-60 ${selectedBrand === 'all' ? 'active' : ''}`}
                 >
                   <span className="text-sm">All Brands</span>
-                </div>
+                </button>
                 
                 {brandLogos.map((brand) => (
-                  <div 
+                  <button 
                     key={brand.id}
                     onClick={() => {
                       handleBrandClick(brand.id);
                       toggleMobileMenu();
                     }}
-                    className={`mobile-filter-item text-center py-2 px-1 ${selectedBrand === brand.id ? 'active' : ''}`}
+                    className={`mobile-filter-item text-center py-2 px-1 z-60 ${selectedBrand === brand.id ? 'active' : ''}`}
                   >
                     <img 
                       src={selectedBrand === brand.id ? brand.hover : brand.dark} 
@@ -416,7 +416,7 @@ function Products() {
                       className="h-6 mx-auto mb-1"
                     />
                     <span className="text-xs">{brand.name}</span>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -425,7 +425,7 @@ function Products() {
       </div>
 
       {/* Main Content */}
-      <div className="main-content relative px-4 md:px-8 pt-6 pb-12" style={{zIndex: 10}}>
+      <div className="main-content relative px-4 md:px-8 pt-20 md:pt-6 pb-12" style={{zIndex: 10}}>
         <div className="container mx-auto">
           {/* Search and Filter Controls */}
           <div className="search-filter-container mb-8">
