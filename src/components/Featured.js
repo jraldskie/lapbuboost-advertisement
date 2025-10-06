@@ -273,7 +273,7 @@ function Featured() {
               Smart Access Graphics technology boost frame rates by intelligently switching between integrated and discrete graphics, or enabling manual controls through a dedicated MUX switch.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
               {/* MUX Switch Video */}
               <div>
                 <h3 className="text-2xl font-bold text-green-500 mb-4">AMD SmartAccess Graphics</h3>
@@ -299,56 +299,54 @@ function Featured() {
                 </video>
               </div>
               
-              <div className="grid grid-cols-1 gap-8">
-                {/* Smart Shift Max */}
-                <div>
-                  <h3 className="text-2xl font-bold text-green-500 mb-4">AMD Smart Shift Max</h3>
-                  <p className="text-gray-300 mb-6">
-                    Smart Shift Max dynamically boost CPU and GPU power allocation. Enhancing performance for numerous tasks while maximizing battery efficiency.
-                  </p>
-                  <video 
-                    className="w-full rounded video-hover-play" 
-                    loop 
-                    muted
-                    onClick={(e) => {
-                      if (e.target.paused) {
-                        e.target.play();
-                      } else {
-                        e.target.pause();
-                      }
-                    }}
-                    onMouseEnter={(e) => e.target.play()}
-                    onMouseLeave={(e) => e.target.pause()}
-                  >
-                    <source src={smartShiftVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+              {/* Smart Shift Max */}
+              <div>
+                <h3 className="text-2xl font-bold text-green-500 mb-4">AMD Smart Shift Max</h3>
+                <p className="text-gray-300 mb-6">
+                  Smart Shift Max dynamically boost CPU and GPU power allocation. Enhancing performance for numerous tasks while maximizing battery efficiency.
+                </p>
+                <video 
+                  className="w-full rounded video-hover-play" 
+                  loop 
+                  muted
+                  onClick={(e) => {
+                    if (e.target.paused) {
+                      e.target.play();
+                    } else {
+                      e.target.pause();
+                    }
+                  }}
+                  onMouseEnter={(e) => e.target.play()}
+                  onMouseLeave={(e) => e.target.pause()}
+                >
+                  <source src={smartShiftVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
                 
-                {/* Smart Access Memory */}
-                <div className="mt-8">
-                  <h3 className="text-2xl font-bold text-green-500 mb-4">AMD Smart Access Memory™</h3>
-                  <p className="text-gray-300 mb-6">
-                    Smart Access Memory lets the CPU access the full GPU VRAM, increasing performance by reducing latency.
-                  </p>
-                  <video 
-                    className="w-full rounded video-hover-play" 
-                    loop 
-                    muted
-                    onClick={(e) => {
-                      if (e.target.paused) {
-                        e.target.play();
-                      } else {
-                        e.target.pause();
-                      }
-                    }}
-                    onMouseEnter={(e) => e.target.play()}
-                    onMouseLeave={(e) => e.target.pause()}
-                  >
-                    <source src={smartAccessVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+              {/* Smart Access Memory */}
+              <div>
+                <h3 className="text-2xl font-bold text-green-500 mb-4">AMD Smart Access Memory™</h3>
+                <p className="text-gray-300 mb-6">
+                  Smart Access Memory lets the CPU access the full GPU VRAM, increasing performance by reducing latency.
+                </p>
+                <video 
+                  className="w-full rounded video-hover-play" 
+                  loop 
+                  muted
+                  onClick={(e) => {
+                    if (e.target.paused) {
+                      e.target.play();
+                    } else {
+                      e.target.pause();
+                    }
+                  }}
+                  onMouseEnter={(e) => e.target.play()}
+                  onMouseLeave={(e) => e.target.pause()}
+                >
+                  <source src={smartAccessVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
