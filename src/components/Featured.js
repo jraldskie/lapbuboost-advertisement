@@ -13,6 +13,9 @@ import ssdImage from '../images/sssdd.png';
 import optimusImage from '../images/optimus.png';
 import rogBannerCover from '../images/rogbannercover.png';
 import amdRyzenLogo from '../images/ryzenlogo.png';
+import nebulaImage from '../images/nebulaimage.png';
+import displayParallax from '../images/displayparallax.png';
+import nvidiaGSync from '../images/nvidiagsync.png';
 
 // Import videos
 import muxVideo from '../images/mux.mp4';
@@ -21,7 +24,7 @@ import smartShiftVideo from '../images/smartshifty.mp4';
 
 function Featured() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   // Function to handle scroll navigation
   const scrollToSection = (sectionIndex) => {
     const sections = document.querySelectorAll('.featured-scroll-container section');
@@ -29,7 +32,7 @@ function Featured() {
       sections[sectionIndex].scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   // Add keyboard navigation (arrow keys)
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -38,29 +41,29 @@ function Featured() {
         const rect = section.getBoundingClientRect();
         return rect.top <= 100 && rect.bottom > 100;
       });
-      
+
       if (e.key === 'ArrowDown' && currentSectionIndex < sections.length - 1) {
         scrollToSection(currentSectionIndex + 1);
       } else if (e.key === 'ArrowUp' && currentSectionIndex > 0) {
         scrollToSection(currentSectionIndex - 1);
       }
     };
-    
+
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
-  
+
   return (
     <div className="bg-black text-white min-h-screen overflow-hidden"
-         style={{
-           backgroundImage: `url(${backgroundImage})`,
-           backgroundSize: 'cover',
-           backgroundPosition: 'center',
-           backgroundAttachment: 'fixed'
-         }}>
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}>
       {/* Dark overlay for better readability */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 z-0"></div>
-      
+
       {/* Navigation for larger screens */}
       <header className="hidden md:flex justify-between items-center px-8 py-5 z-30 relative">
         <a href="/" className="flex items-center">
@@ -84,8 +87,8 @@ function Featured() {
             <img src={lapbuboostLogo} alt="Lapbuboost Logo" className="h-8 mr-2" />
             <h1 className="text-white text-lg font-bold">LAPBUBOOST</h1>
           </a>
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-white text-3xl focus:outline-none burger-button"
             aria-label="Toggle menu"
           >
@@ -106,9 +109,66 @@ function Featured() {
       </div>
 
       {/* Navigation dots removed as requested */}
-      
+
       <div className="featured-scroll-container w-full overflow-y-auto relative z-10">
-        
+
+        {/* ROG Nebula Display Section */}
+        <section className="min-h-screen flex items-center border-b border-gray-800">
+          <div className="container mx-auto px-4 md:px-8 py-16 flex flex-col md:flex-row items-center gap-8">
+            {/* Left side - Laptop Image */}
+            <div className="w-full md:w-1/2 mb-8 md:mb-0">
+              <img
+                src={displayParallax}
+                alt="ROG Nebula Display"
+                className="w-full max-w-3xl mx-auto shadow-2xl"
+              />
+            </div>
+
+            {/* Right side - Content */}
+            <div className="w-full md:w-1/2 md:pl-12">
+              <img
+                src={nebulaImage}
+                alt="ROG Nebula Display Logo"
+                className="h-14 md:h-20 mb-6"
+              />
+              
+              <p className="text-gray-300 mb-8 text-lg leading-relaxed">
+                The Strix G18 has fast panel options to ensure you won't miss anything. It offers an 18-inch machine with a 2.5K 240Hz Nebula display, providing precise visuals even in intense gaming situations. Additionally, it is available with a Full HD 165Hz panel, both with great color, Dolby Vision, Adaptive-Sync support, and an 89% screen-to-body ratio for an excellent gaming and viewing experience.
+              </p>
+
+              <div className="mb-8 flex justify-center">
+                <img
+                  src={nvidiaGSync}
+                  alt="NVIDIA G-SYNC"
+                  className="h-10 md:h-12"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-6 mb-4 max-w-md mx-auto">
+                <div className="text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">89%</h3>
+                  <p className="text-gray-400 text-sm">Screen Ratio</p>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">240Hz / 3ms</h3>
+                  <p className="text-gray-400 text-sm">Refresh Rate</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-6 max-w-md mx-auto">
+                <div className="text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">500 Nits</h3>
+                  <p className="text-gray-400 text-sm">Screen Brightness</p>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">100% DCI-P3</h3>
+                  <p className="text-gray-400 text-sm">Technology</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Xbox Game Pass Section */}
         <section className="h-screen flex items-center border-b border-gray-800">
           <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
@@ -123,10 +183,10 @@ function Featured() {
               Play over 100 high-quality games with friends on your PC, laptop, console, phone or tablet. With new games added all the time, there's always something new to play.
             </p>
             <div className="w-full max-w-4xl mx-auto">
-              <img 
-                src={xboxBanner} 
-                alt="Xbox Game Pass Banner" 
-                className="w-full shadow-2xl" 
+              <img
+                src={xboxBanner}
+                alt="Xbox Game Pass Banner"
+                className="w-full shadow-2xl"
               />
             </div>
           </div>
@@ -136,10 +196,10 @@ function Featured() {
         <section className="min-h-screen flex items-center border-b border-gray-800">
           <div className="container mx-auto px-4 md:px-8 py-16 flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2 mb-8 md:mb-0">
-              <img 
-                src={intelBack} 
-                alt="Intel Processor" 
-                className="w-full max-w-xl mx-auto" 
+              <img
+                src={intelBack}
+                alt="Intel Processor"
+                className="w-full max-w-xl mx-auto"
               />
             </div>
             <div className="w-full md:w-1/2 md:pl-12">
@@ -152,7 +212,7 @@ function Featured() {
               <p className="text-gray-400 text-sm mb-8">
                 *Actual FPS performance may vary based on the configuration settings.
               </p>
-              
+
               <div className="grid grid-cols-3 gap-6">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-white">24 Cores</h3>
@@ -175,10 +235,10 @@ function Featured() {
         <section className="min-h-screen flex items-center border-b border-gray-800">
           <div className="container mx-auto px-4 md:px-8 py-16 flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2 mb-8 md:mb-0 md:order-2">
-              <img 
-                src={nvidiaBack} 
-                alt="NVIDIA GeForce" 
-                className="w-full max-w-xl mx-auto" 
+              <img
+                src={nvidiaBack}
+                alt="NVIDIA GeForce"
+                className="w-full max-w-xl mx-auto"
               />
             </div>
             <div className="w-full md:w-1/2 md:pr-12 md:order-1">
@@ -191,7 +251,7 @@ function Featured() {
               <p className="text-gray-400 text-sm mb-8">
                 *Actual FPS performance may vary based on the configuration settings.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-white">Up to NVIDIA® GeForce</h3>
@@ -203,7 +263,7 @@ function Featured() {
                   <p className="text-gray-400 text-sm">Dynamic Boost</p>
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="text-xl font-medium text-green-400">NVIDIA® Advance Optimus</h3>
               </div>
@@ -218,10 +278,10 @@ function Featured() {
               {/* NVIDIA Advance Optimus */}
               <div>
                 <h3 className="text-xl font-bold text-green-500 mb-4">NVIDIA® Advance Optimus</h3>
-                <img 
-                  src={optimusImage} 
-                  alt="NVIDIA Advance Optimus" 
-                  className="w-full h-auto object-cover mb-4" 
+                <img
+                  src={optimusImage}
+                  alt="NVIDIA Advance Optimus"
+                  className="w-full h-auto object-cover mb-4"
                 />
                 <p className="text-gray-300 text-base">
                   Advance Optimus helps send images from the high-performance graphics card straight to the display, which enhances FPS 20% faster than laptops without this feature.
@@ -231,10 +291,10 @@ function Featured() {
               {/* Lightning DDR5 Memory */}
               <div>
                 <h3 className="text-xl font-bold text-purple-400 mb-4">Lightning DDR5 Memory</h3>
-                <img 
-                  src={ramImage} 
-                  alt="DDR5 RAM" 
-                  className="w-full h-auto object-cover mb-4" 
+                <img
+                  src={ramImage}
+                  alt="DDR5 RAM"
+                  className="w-full h-auto object-cover mb-4"
                 />
                 <p className="text-gray-300 text-base">
                   DDR5 Memory utilizes advanced DDR5 5600MHz modules, delivering 77% faster speed than 3200MHz kits. It enhances performance across demanding tasks from gaming to web browsing.
@@ -247,10 +307,10 @@ function Featured() {
               {/* Faster SSD */}
               <div>
                 <h3 className="text-xl font-bold text-purple-400 mb-4">Faster SSD</h3>
-                <img 
-                  src={ssdImage} 
-                  alt="PCIe Gen4 SSD" 
-                  className="w-full h-auto object-cover mb-4" 
+                <img
+                  src={ssdImage}
+                  alt="PCIe Gen4 SSD"
+                  className="w-full h-auto object-cover mb-4"
                 />
                 <p className="text-gray-300 text-base">
                   A PCIe Gen4 SSD can be set up in RAID 0 to quickly load large files and detailed game worlds, with speeds of up to 7000MB/s.
@@ -272,7 +332,7 @@ function Featured() {
             <p className="text-gray-300 mb-12 max-w-4xl text-lg">
               Smart Access Graphics technology boost frame rates by intelligently switching between integrated and discrete graphics, or enabling manual controls through a dedicated MUX switch.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
               {/* MUX Switch Video */}
               <div>
@@ -280,9 +340,9 @@ function Featured() {
                 <p className="text-gray-300 mb-6">
                   Switch between integrated and discrete graphics on-demand with MUX Switch technology for enhanced performance.
                 </p>
-                <video 
-                  className="w-full rounded video-hover-play" 
-                  loop 
+                <video
+                  className="w-full rounded video-hover-play"
+                  loop
                   muted
                   onClick={(e) => {
                     if (e.target.paused) {
@@ -298,16 +358,16 @@ function Featured() {
                   Your browser does not support the video tag.
                 </video>
               </div>
-              
+
               {/* Smart Shift Max */}
               <div>
                 <h3 className="text-2xl font-bold text-green-500 mb-4">AMD Smart Shift Max</h3>
                 <p className="text-gray-300 mb-6">
                   Smart Shift Max dynamically boost CPU and GPU power allocation. Enhancing performance for numerous tasks while maximizing battery efficiency.
                 </p>
-                <video 
-                  className="w-full rounded video-hover-play" 
-                  loop 
+                <video
+                  className="w-full rounded video-hover-play"
+                  loop
                   muted
                   onClick={(e) => {
                     if (e.target.paused) {
@@ -323,16 +383,16 @@ function Featured() {
                   Your browser does not support the video tag.
                 </video>
               </div>
-                
+
               {/* Smart Access Memory */}
               <div>
                 <h3 className="text-2xl font-bold text-green-500 mb-4">AMD Smart Access Memory™</h3>
                 <p className="text-gray-300 mb-6">
                   Smart Access Memory lets the CPU access the full GPU VRAM, increasing performance by reducing latency.
                 </p>
-                <video 
-                  className="w-full rounded video-hover-play" 
-                  loop 
+                <video
+                  className="w-full rounded video-hover-play"
+                  loop
                   muted
                   onClick={(e) => {
                     if (e.target.paused) {
