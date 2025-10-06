@@ -108,12 +108,10 @@ function AboutUs() {
       <div className="md:hidden z-20 relative">
         {/* Mobile header */}
         <header className="flex justify-between items-center p-4">
-          <div className="flex items-center">
-            <a href="/">
-              <img src={lapbuboostLogo} alt="Lapbuboost Logo" className="h-8 mr-2" />
-            </a>
+          <a href="/" className="flex items-center">
+            <img src={lapbuboostLogo} alt="Lapbuboost Logo" className="h-8 mr-2" />
             <h1 className="text-white text-lg font-bold">LAPBUBOOST</h1>
-          </div>
+          </a>
           <button 
             onClick={toggleMobileMenu} 
             className="text-white text-3xl focus:outline-none burger-button"
@@ -124,13 +122,13 @@ function AboutUs() {
         </header>
 
         {/* Mobile menu */}
-        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''} bg-black bg-opacity-90 backdrop-blur-sm absolute w-full z-30 transition-all duration-300`}>
+        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''} bg-black bg-opacity-90 backdrop-blur-sm fixed top-16 left-0 right-0 z-30 transition-all duration-300`}>
           <nav className="flex flex-col items-center py-5">
-            <a href="/" className="text-white py-3 hover:text-blue-400 nav-link">Home</a>
-            <a href="/gallery" className="text-white py-3 hover:text-blue-400 nav-link">Gallery</a>
-            <a href="/featured" className="text-white py-3 hover:text-blue-400 nav-link">Featured</a>
-            <a href="/products" className="text-white py-3 hover:text-blue-400 nav-link">Products</a>
-            <a href="/about" className="text-white py-3 hover:text-blue-400 nav-link active">About Us</a>
+            <a href="/" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link">Home</a>
+            <a href="/gallery" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link">Gallery</a>
+            <a href="/featured" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link">Featured</a>
+            <a href="/products" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link">Products</a>
+            <a href="/about" className="text-white py-3 w-full text-center hover:text-blue-400 nav-link active">About Us</a>
           </nav>
         </div>
       </div>

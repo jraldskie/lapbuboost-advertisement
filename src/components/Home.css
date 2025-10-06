@@ -29,6 +29,11 @@
   .floating-laptop {
     animation: float 4s ease-in-out infinite;
   }
+  
+  /* Fix slideshow container on mobile */
+  .slideshow-container {
+    margin-bottom: 30px;
+  }
 }
 
 /* Navigation links styling */
@@ -73,6 +78,7 @@
 .mobile-menu {
   max-height: 0;
   overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-menu.open {
@@ -105,6 +111,15 @@ html {
   padding: 12px 30px;
 }
 
+/* Make sure the slideshow dots are visible on mobile */
+.slideshow-dots {
+  padding: 10px 0;
+}
+
+.slideshow-dot {
+  margin: 0 4px;
+}
+
 @media (min-width: 768px) {
   h1 {
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
@@ -113,4 +128,25 @@ html {
   h2 {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   }
+}
+
+/* Prevent content overflow on small screens */
+@media (max-width: 480px) {
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+  }
+  
+  .py-24 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Ensure images don't overflow their containers */
+img {
+  max-width: 100%;
 }
