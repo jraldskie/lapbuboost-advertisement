@@ -56,7 +56,8 @@ function Gallery() {
       displayLogo: bigdisplaylogo,
       displayLabel: 'Display',
       image: rog,
-      taglineColor: '#ff0050'
+      taglineColor: '#ff0050',
+      glowColor: 'rgba(255, 0, 80, 0.7)'
     },
     {
       brandLogo: tuflogo,
@@ -77,7 +78,8 @@ function Gallery() {
       displayLogo: displaylogo,
       displayLabel: 'Display',
       image: tuf,
-      taglineColor: '#ffeb00'
+      taglineColor: '#ffeb00',
+      glowColor: 'rgba(255, 235, 0, 0.7)'
     },
     {
       brandLogo: aoruslogo,
@@ -98,7 +100,8 @@ function Gallery() {
       displayLogo: mediumdisplaylogo,
       displayLabel: 'Display',
       image: aorus,
-      taglineColor: '#ff9000'
+      taglineColor: '#ff9000',
+      glowColor: 'rgba(255, 144, 0, 0.7)'
     },
     {
       brandLogo: predatorlogo,
@@ -119,7 +122,8 @@ function Gallery() {
       displayLogo: bigdisplaylogo,
       displayLabel: 'Display',
       image: predator,
-      taglineColor: '#00ffff'
+      taglineColor: '#00ffff',
+      glowColor: 'rgba(0, 255, 255, 0.7)'
     },
     {
       brandLogo: legionlogo,
@@ -140,7 +144,8 @@ function Gallery() {
       displayLogo: displaylogo,
       displayLabel: 'Display',
       image: legion,
-      taglineColor: '#00d4ff'
+      taglineColor: '#00d4ff',
+      glowColor: 'rgba(0, 212, 255, 0.7)'
     },
     {
       brandLogo: msilogo,
@@ -161,7 +166,8 @@ function Gallery() {
       displayLogo: mediumdisplaylogo,
       displayLabel: 'Display',
       image: msi,
-      taglineColor: '#ff0000'
+      taglineColor: '#ff0000',
+      glowColor: 'rgba(255, 0, 0, 0.7)'
     }
   ];
 
@@ -294,20 +300,27 @@ function Gallery() {
           {/* Right Image Section */}
           <div className="content-right">
             <div className="laptop-image-container">
-              <img src={currentLaptop.image} alt={currentLaptop.model} className="laptop-image laptop-glow floating-laptop" />
+              <img 
+                src={currentLaptop.image} 
+                alt={currentLaptop.model} 
+                className="laptop-image floating-laptop" 
+                style={{
+                  filter: `drop-shadow(0 0 8px ${currentLaptop.glowColor}) drop-shadow(0 0 15px ${currentLaptop.glowColor})`
+                }}
+              />
             </div>
           </div>
         </div>
 
         {/* Navigation Arrows */}
         <button className="nav-arrow nav-arrow-left" onClick={prevSlide} aria-label="Previous laptop">
-          <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-            <path d="M35 15L20 30L35 45" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
         <button className="nav-arrow nav-arrow-right" onClick={nextSlide} aria-label="Next laptop">
-          <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-            <path d="M25 15L40 30L25 45" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
       </div>
