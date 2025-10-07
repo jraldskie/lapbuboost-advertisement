@@ -7,13 +7,34 @@
 
 /* Store Image */
 .store-image {
-  filter: drop-shadow(0 0 10px rgba(157, 0, 255, 0.7)) drop-shadow(0 0 25px rgba(255, 0, 242, 0.5));
   transition: transform 0.3s ease;
   border-radius: 8px;
 }
 
 .store-image:hover {
   transform: scale(1.02);
+}
+
+/* Store glow effect */
+.store-glow {
+  filter: drop-shadow(0 0 10px rgba(157, 0, 255, 0.7)) drop-shadow(0 0 25px rgba(255, 0, 242, 0.5));
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-store {
+  animation: float 6s ease-in-out infinite;
 }
 
 /* Text styling */
@@ -126,6 +147,14 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .store-glow {
+    filter: drop-shadow(0 0 8px rgba(157, 0, 255, 0.6));
+  }
+  
+  .floating-store {
+    animation: float 4s ease-in-out infinite;
+  }
+
   .about-content-section,
   .social-media-section,
   .branches-section {

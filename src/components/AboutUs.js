@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './AboutUs.css';
 import lapbuboostLogo from '../images/LOGO.png';
 import aboutStoreImage from '../images/aboutstoree.png';
@@ -13,7 +13,31 @@ function AboutUs() {
   const [loading, setLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const form = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -163,7 +187,7 @@ function AboutUs() {
               <img 
                 src={aboutStoreImage} 
                 alt="Lapbuboost Store" 
-                className="rounded-lg shadow-2xl w-full store-image" 
+                className="rounded-lg shadow-2xl w-full store-image store-glow floating-store" 
               />
             </div>
           </div>
@@ -385,6 +409,17 @@ function AboutUs() {
       <footer className="py-6 text-center text-gray-400 text-sm z-10 relative">
         <p>© 2025 Lapbuboost. All Rights Reserved.</p>
       </footer>
+
+      {/* Back to Top Button */}
+      <button 
+        onClick={scrollToTop} 
+        className={`back-to-top fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 ${showBackToTop ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'}`}
+        aria-label="Back to top"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+      </button>
     </div>
   );
 }

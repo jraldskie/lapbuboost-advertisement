@@ -6,6 +6,28 @@
   min-height: 100vh;
 }
 
+/* Laptop glow effect */
+.laptop-glow {
+  filter: drop-shadow(0 0 10px rgba(157, 0, 255, 0.7)) drop-shadow(0 0 25px rgba(255, 0, 242, 0.5));
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-laptop {
+  animation: float 6s ease-in-out infinite;
+}
+
 /* Navigation links styling */
 .nav-link {
   position: relative;
@@ -374,6 +396,14 @@
 
 /* Mobile Responsive (max-width: 768px) */
 @media (max-width: 768px) {
+  .laptop-glow {
+    filter: drop-shadow(0 0 8px rgba(157, 0, 255, 0.6));
+  }
+  
+  .floating-laptop {
+    animation: float 4s ease-in-out infinite;
+  }
+
   .laptop-showcase {
     min-height: auto;
     padding: 1rem 0.5rem 5rem 0.5rem;
@@ -451,6 +481,15 @@
 
   .nav-arrow {
     padding: 0.5rem;
+    top: 1rem;
+    bottom: auto;
+    transform: none;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-arrow:hover {
+    transform: none;
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .nav-arrow svg {
@@ -459,11 +498,11 @@
   }
 
   .nav-arrow-left {
-    left: 0.5rem;
+    left: 1rem;
   }
 
   .nav-arrow-right {
-    right: 0.5rem;
+    right: 1rem;
   }
 
   .slide-indicators {
@@ -535,6 +574,15 @@
 
   .nav-arrow {
     padding: 0.4rem;
+    top: 1rem;
+    bottom: auto;
+    transform: none;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-arrow:hover {
+    transform: none;
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .nav-arrow svg {
@@ -543,11 +591,11 @@
   }
 
   .nav-arrow-left {
-    left: 0.25rem;
+    left: 0.75rem;
   }
 
   .nav-arrow-right {
-    right: 0.25rem;
+    right: 0.75rem;
   }
 
   .slide-indicators {

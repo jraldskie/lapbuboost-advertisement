@@ -21,7 +21,7 @@ import msi from '../images/msi.png';
 
 // Spec icons
 import nvidialogo from '../images/nvidialogo.png';
-import ssdlogo from '../images/ram.png';
+import ssdlogo from '../images/ssdlogo.png';
 import intellogo from '../images/intellogo.png';
 import amdlogo from '../images/amdlogo.png';
 import displaylogo from '../images/displaylogo.png';
@@ -74,7 +74,7 @@ function Gallery() {
       ssdLogo: ssdlogo,
       ssdLabel: 'PCIe® Gen 4x4',
       display: '165Hz FHD',
-      displayLogo: mediumdisplaylogo,
+      displayLogo: displaylogo,
       displayLabel: 'Display',
       image: tuf,
       taglineColor: '#ffeb00'
@@ -95,7 +95,7 @@ function Gallery() {
       ssdLogo: ssdlogo,
       ssdLabel: 'PCIe® Gen 4x4',
       display: '240Hz QHD',
-      displayLogo: bigdisplaylogo,
+      displayLogo: mediumdisplaylogo,
       displayLabel: 'Display',
       image: aorus,
       taglineColor: '#ff9000'
@@ -137,7 +137,7 @@ function Gallery() {
       ssdLogo: ssdlogo,
       ssdLabel: 'PCIe® Gen 4x4',
       display: '165Hz Mini LED',
-      displayLogo: mediumdisplaylogo,
+      displayLogo: displaylogo,
       displayLabel: 'Display',
       image: legion,
       taglineColor: '#00d4ff'
@@ -158,7 +158,7 @@ function Gallery() {
       ssdLogo: ssdlogo,
       ssdLabel: 'PCIe® Gen 4x4',
       display: '300Hz FHD',
-      displayLogo: bigdisplaylogo,
+      displayLogo: mediumdisplaylogo,
       displayLabel: 'Display',
       image: msi,
       taglineColor: '#ff0000'
@@ -294,7 +294,7 @@ function Gallery() {
           {/* Right Image Section */}
           <div className="content-right">
             <div className="laptop-image-container">
-              <img src={currentLaptop.image} alt={currentLaptop.model} className="laptop-image" />
+              <img src={currentLaptop.image} alt={currentLaptop.model} className="laptop-image laptop-glow floating-laptop" />
             </div>
           </div>
         </div>
@@ -311,6 +311,11 @@ function Gallery() {
           </svg>
         </button>
       </div>
+
+      {/* Footer */}
+      <footer className="py-6 text-center text-gray-400 text-sm relative" style={{zIndex: 10}}>
+        <p>© 2025 Lapbuboost. All Rights Reserved.</p>
+      </footer>
     </div>
   );
 }

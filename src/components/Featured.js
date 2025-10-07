@@ -24,6 +24,30 @@ import smartShiftVideo from '../images/smartshifty.mp4';
 
 function Featured() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   // Function to handle scroll navigation
   const scrollToSection = (sectionIndex) => {
@@ -62,7 +86,7 @@ function Featured() {
         backgroundAttachment: 'fixed'
       }}>
       {/* Dark overlay for better readability */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 z-0"></div>
+      <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 pointer-events-none" style={{zIndex: 5}}></div>
 
       {/* Navigation for larger screens */}
       <header className="hidden md:flex justify-between items-center px-8 py-5 z-30 relative">
@@ -412,6 +436,22 @@ function Featured() {
           </div>
         </section>
       </div>
+
+      {/* Footer */}
+      <footer className="py-6 text-center text-gray-400 text-sm relative" style={{zIndex: 10}}>
+        <p>© 2025 Lapbuboost. All Rights Reserved.</p>
+      </footer>
+
+      {/* Back to Top Button */}
+      <button 
+        onClick={scrollToTop} 
+        className={`back-to-top fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 ${showBackToTop ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'}`}
+        aria-label="Back to top"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+      </button>
     </div>
   );
 }
