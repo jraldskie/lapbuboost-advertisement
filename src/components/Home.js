@@ -91,8 +91,8 @@ function Home() {
 
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row items-center justify-center min-h-screen px-6 md:px-16 py-24 md:py-0">
-        <div className="text-center md:text-left md:w-1/2 mb-12 md:mb-0 z-10">
-          <a href="/" className="mb-6 md:mb-8 flex justify-center md:justify-start items-center">
+        <div className="text-center md:w-1/2 mb-12 md:mb-0 z-10">
+          <a href="/" className="mb-6 md:mb-8 flex justify-center items-center">
             <img src={lapbuboostLogo} alt="Lapbuboost Logo" className="h-12 md:h-24" />
             <h1 className="text-white text-2xl md:text-4xl font-bold ml-2 flex items-center tracking-wider">
               LAPBUBOOST
@@ -120,22 +120,6 @@ function Home() {
                   className="w-auto h-auto max-w-[200px] md:max-w-[450px] max-h-[220px] md:max-h-none object-contain transform hover:scale-105 transition duration-500 laptop-glow floating-laptop"
                 />
               </div>
-            ))}
-          </div>
-          
-          {/* Slideshow Navigation Dots */}
-          <div className="slideshow-dots absolute bottom-0 left-0 right-0 flex justify-center space-x-1 mb-2">
-            {slideshowImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`slideshow-dot w-1.5 h-1.5 rounded-full transition-all duration-300 focus:outline-none ${
-                  currentSlide === index 
-                    ? 'bg-purple-500 w-3' 
-                    : 'bg-gray-400 bg-opacity-50 hover:bg-gray-300'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
             ))}
           </div>
         </div>

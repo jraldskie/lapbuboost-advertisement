@@ -86,7 +86,11 @@ function AboutUs() {
            backgroundImage: `url(${backgroundImage})`,
            backgroundSize: 'cover',
            backgroundPosition: 'center',
+           backgroundAttachment: 'fixed'
          }}>
+      {/* Dark overlay for better readability */}
+      <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 pointer-events-none" style={{zIndex: 5}}></div>
+      
       {/* Navigation for larger screens */}
       <header className="hidden md:flex justify-between items-center px-8 py-5 z-20 relative">
         <div className="flex items-center">
@@ -148,7 +152,7 @@ function AboutUs() {
               </div>
               
               <div className="text-description">
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                <p className="text-gray-300 text-lg leading-relaxed">
                   Gaming laptops represent the perfect solution for the modern Filipino gamer who values both performance and mobility. In the Philippines, where internet cafes (computer shops) have traditionally dominated the gaming landscape, there's a growing shift toward personal gaming devices that offer the freedom to game anywhere.
                 </p>
               </div>
@@ -381,9 +385,6 @@ function AboutUs() {
       <footer className="py-6 text-center text-gray-400 text-sm z-10 relative">
         <p>© 2025 Lapbuboost. All Rights Reserved.</p>
       </footer>
-      
-      {/* Dark overlay for better text readability */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-75 z-0"></div>
     </div>
   );
 }
