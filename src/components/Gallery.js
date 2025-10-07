@@ -213,7 +213,7 @@ function Gallery() {
         <header className="flex justify-between items-center p-4">
           <a href="/" className="flex items-center">
             <img src={lapbuboostLogo} alt="Lapbuboost Logo" className="h-8 mr-2" />
-            <h1 className="text-white text-lg font-bold">LAPIFY</h1>
+            <h1 className="text-white text-lg font-bold">LAPBUBOOST</h1>
           </a>
           <button 
             onClick={toggleMobileMenu} 
